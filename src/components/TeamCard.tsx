@@ -5,7 +5,7 @@ import type { TeamMember } from "@/lib/types";
 export function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="rounded-2xl border border-neutral-light bg-white p-5 text-center shadow-sm">
-      <Image src={member.photo} alt="" width={96} height={96} className="mx-auto h-24 w-24 rounded-full object-cover" />
+      <Image src={member.photo} alt="" width={96} height={96} unoptimized className="mx-auto h-24 w-24 rounded-full object-cover" />
       <p className="mt-3 font-heading text-lg font-bold">{member.name}</p>
       <p className="text-sm text-neutral-dark/70">{member.role}</p>
       <div className="mt-2 flex justify-center gap-3">

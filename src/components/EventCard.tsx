@@ -10,7 +10,14 @@ function formatEventDate(iso: string) {
 export function EventCard({ event }: { event: EventDetails }) {
   return (
     <div className="overflow-hidden rounded-2xl border border-neutral-light bg-white shadow-sm">
-      <Image src="/images/event-placeholder.svg" alt="" width={400} height={225} className="h-40 w-full object-cover" />
+      <Image
+        src="/images/event-placeholder.svg"
+        alt=""
+        width={400}
+        height={225}
+        unoptimized
+        className="h-40 w-full object-cover"
+      />
       <div className="p-5">
         <p className="flex items-center gap-1 text-xs font-medium text-google-blue">
           <Calendar className="h-4 w-4" /> {formatEventDate(event.date)}
