@@ -1,8 +1,11 @@
+import fs from "node:fs";
+import path from "node:path";
+import matter from "gray-matter";
 import { sampleEvents } from "../../content/data/events";
 import { sampleSpeakers } from "../../content/data/speakers";
 import { sampleSponsors } from "../../content/data/sponsors";
 import { sampleTeam } from "../../content/data/team";
-import type { EventDetails, Speaker, Sponsor, SponsorTier, TeamMember } from "./types";
+import type { BlogPost, BlogPostMeta, EventDetails, Speaker, Sponsor, SponsorTier, TeamMember } from "./types";
 
 export function getEvents(): EventDetails[] {
   return sampleEvents;
@@ -50,4 +53,38 @@ export function getSponsorsByTier(): Record<SponsorTier, Sponsor[]> {
 
 export function getTeam(): TeamMember[] {
   return sampleTeam;
+}
+
+const BLOG_DIR = path.join(process.cwd(), "content/blog");
+
+export function getBlogPosts(): BlogPostMeta[] {
+  const files = fs.readdirSync(BLOG_DIR).filter((filename) => filename.endsWith(".mdx"));
+  const posts = files.map((filename) => {
+    const slug = filename.replace(/\.mdx$/, "");
+    const raw = fs.readFileSync(path.join(BLOG_DIR, filename), "utf8");
+    const { data } = matter(raw);
+    return {
+      slug,
+      title: data.title as string,
+      date: data.date as string,
+      excerpt: data.excerpt as string,
+      ogImage: data.ogImage as string | undefined,
+    } satisfies BlogPostMeta;
+  });
+  return posts.sort((a, b) => (a.date > b.date ? -1 : 1));
+}
+
+export function getBlogPostBySlug(slug: string): BlogPost | undefined {
+  const filePath = path.join(BLOG_DIR, `${slug}.mdx`);
+  if (!fs.existsSync(filePath)) return undefined;
+  const raw = fs.readFileSync(filePath, "utf8");
+  const { data, content } = matter(raw);
+  return {
+    slug,
+    title: data.title as string,
+    date: data.date as string,
+    excerpt: data.excerpt as string,
+    ogImage: data.ogImage as string | undefined,
+    content,
+  };
 }
