@@ -1,16 +1,33 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { headingFont, bodyFont, monoFont } from "@/lib/fonts";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { organizationJsonLd } from "@/lib/jsonld";
+import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "GDG Cloud Chandigarh",
-  description: "The place for cloud developers and architects in Chandigarh.",
+  metadataBase: new URL(SITE_URL),
+  title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
+  description: SITE_TAGLINE,
+  openGraph: { siteName: SITE_NAME, type: "website", images: [{ url: "/images/og-default.svg" }] },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${headingFont.variable} ${bodyFont.variable} ${monoFont.variable}`}>
-      <body>{children}</body>
+      <body className="flex min-h-screen flex-col">
+        <Script
+          id="organization-jsonld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+        />
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
