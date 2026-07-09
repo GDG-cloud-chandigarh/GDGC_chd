@@ -6,7 +6,6 @@ import { FOOTER_DISCLAIMER, SOCIAL_LINKS, NEWSLETTER_FORM_URL } from "@/lib/cons
 const FOOTER_LINKS = [
   { href: "/about", label: "About" },
   { href: "/events", label: "Events" },
-  { href: "/speakers", label: "Speakers" },
   { href: "/sponsors", label: "Sponsors" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },

@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/constants";
 import { getEvents, getBlogPosts } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/events", "/speakers", "/team", "/sponsors", "/blog", "/contact"].map((path) => ({
+  const staticRoutes = ["", "/about", "/events", "/team", "/sponsors", "/blog", "/contact"].map((path) => ({
     url: `${SITE_URL}${path}`,
     lastModified: new Date(),
   }));

@@ -1,9 +1,16 @@
-export function Lockup() {
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { SITE_NAME } from "@/lib/constants";
+
+export function Lockup({ className }: { className?: string }) {
   return (
-    <span className="flex items-baseline gap-1 font-heading text-lg font-bold">
-      <span className="text-google-blue">GDG</span>
-      <span className="text-google-red">Cloud</span>
-      <span className="text-neutral-dark">Chandigarh</span>
-    </span>
+    <Image
+      src="/images/gdgcchd_logo.png"
+      alt={SITE_NAME}
+      width={1906}
+      height={401}
+      priority
+      className={cn("h-10 w-auto", className)}
+    />
   );
 }

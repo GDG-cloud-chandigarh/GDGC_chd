@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { Gravity, MatterBody } from "@/components/ui/gravity";
 
 const HERO_TAGS = [
-  { label: "Cloud Run", bg: "bg-google-blue", text: "text-white" },
-  { label: "BigQuery", bg: "bg-google-green", text: "text-white" },
-  { label: "Vertex AI", bg: "bg-google-red", text: "text-white" },
-  { label: "GKE", bg: "bg-neutral-dark", text: "text-white" },
+  { label: "Cloud Run", bg: "bg-google-blue", text: "text-neutral-dark" },
+  { label: "BigQuery", bg: "bg-google-green", text: "text-neutral-dark" },
+  { label: "Vertex AI", bg: "bg-google-red", text: "text-neutral-dark" },
+  { label: "GKE", bg: "bg-white", text: "text-neutral-dark" },
   { label: "Firebase", bg: "bg-google-yellow", text: "text-neutral-dark" },
-  { label: "DevFest", bg: "bg-google-blue", text: "text-white" },
-  { label: "Study Jams", bg: "bg-google-green", text: "text-white" },
-  { label: "Community", bg: "bg-google-red", text: "text-white" },
+  { label: "DevFest", bg: "bg-google-blue", text: "text-neutral-dark" },
+  { label: "Study Jams", bg: "bg-google-green", text: "text-neutral-dark" },
+  { label: "Community", bg: "bg-google-red", text: "text-neutral-dark" },
 ];
 
 export function HeroGravity() {
@@ -28,7 +28,7 @@ export function HeroGravity() {
         {HERO_TAGS.map((tag) => (
           <span
             key={tag.label}
-            className={`rounded-full ${tag.bg} ${tag.text} px-8 py-4 text-lg font-semibold sm:text-xl md:text-2xl`}
+            className={`rounded-full border-2 border-neutral-dark ${tag.bg} ${tag.text} px-20 py-10 text-2xl font-bold sm:text-3xl md:text-4xl`}
           >
             {tag.label}
           </span>
@@ -54,7 +54,7 @@ export function HeroGravity() {
               y={`${5 + (i % 3) * 8}%`}
             >
               <div
-                className={`rounded-full ${tag.bg} ${tag.text} px-8 py-4 text-lg font-semibold shadow-md sm:text-xl md:text-2xl`}
+                className={`rounded-full border-2 border-neutral-dark ${tag.bg} ${tag.text} px-20 py-10 text-2xl font-bold shadow-md sm:text-3xl md:text-4xl`}
               >
                 {tag.label}
               </div>
