@@ -28,7 +28,7 @@ export function HeroGravity() {
         {HERO_TAGS.map((tag) => (
           <span
             key={tag.label}
-            className={`rounded-full border-2 border-neutral-dark ${tag.bg} ${tag.text} px-20 py-10 text-2xl font-bold sm:text-3xl md:text-4xl`}
+            className={`rounded-full border-2 border-neutral-dark ${tag.bg} ${tag.text} px-5 py-3 text-sm font-bold sm:px-10 sm:py-6 sm:text-2xl md:px-16 md:py-8 md:text-3xl lg:px-16 lg:py-8 2xl:px-20 2xl:py-10 lg:text-4xl`}
           >
             {tag.label}
           </span>
@@ -54,7 +54,7 @@ export function HeroGravity() {
               y={`${5 + (i % 3) * 8}%`}
             >
               <div
-                className={`rounded-full border-2 border-neutral-dark ${tag.bg} ${tag.text} px-20 py-10 text-2xl font-bold shadow-md sm:text-3xl md:text-4xl`}
+                className={`rounded-full border-2 border-neutral-dark ${tag.bg} ${tag.text} px-6 py-4 text-sm font-bold shadow-md sm:px-10 sm:py-6 sm:text-2xl md:px-16 md:py-8 md:text-3xl lg:px-16 lg:py-8 2xl:px-20 2xl:py-10 lg:text-4xl`}
               >
                 {tag.label}
               </div>

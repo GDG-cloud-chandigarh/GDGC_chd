@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils";
 const GDG_COLORS = ["#4285F4", "#34A853", "#EA4335", "#FBBC05"];
 
 const sizeStyles = {
-  sm: { button: "gap-1.5 px-4 py-2 text-sm", icon: "h-3.5 w-3.5" },
-  md: { button: "gap-1.5 px-6 py-3 text-sm", icon: "h-4 w-4" },
+  sm: { button: "tracking-wide px-5 py-2.5 text-sm", icon: "h-3.5 w-3.5" },
+  md: { button: "tracking-wide px-8 py-3.5 text-base", icon: "h-4 w-4" },
 } as const;
 
 interface GlowButtonProps {

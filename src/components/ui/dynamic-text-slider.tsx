@@ -67,7 +67,8 @@ export function DynamicTextSlider({
     };
   }, [sliderWord]);
 
-  const wordClasses = "font-heading font-bold tracking-tighter text-5xl text-neutral-dark md:text-7xl";
+  const wordClasses =
+    "font-heading font-bold tracking-tighter text-2xl text-neutral-dark sm:text-4xl md:text-6xl lg:text-7xl";
 
   return (
     <div className={cn("flex flex-col items-center justify-center text-center", className)}>
@@ -84,7 +85,9 @@ export function DynamicTextSlider({
         </span>
 
         {subheading && (
-          <p className="mx-auto mt-8 max-w-2xl text-lg text-neutral-dark/70 md:text-xl">{subheading}</p>
+          <p className="mx-auto mt-6 max-w-2xl px-2 text-base text-neutral-dark/70 sm:mt-8 md:text-xl">
+            {subheading}
+          </p>
         )}
 
         {children && <div className="mt-6 flex justify-center">{children}</div>}
@@ -97,7 +100,6 @@ interface WordSliderProps {
   width: number;
   word: string;
   wordClasses: string;
-  height?: number;
   handleSize?: number;
   onChange?: (state: { left: number; right: number; range: number }) => void;
 }
@@ -107,7 +109,7 @@ interface WordSliderProps {
  * dynamically based on handle positions; dragging is projected onto the
  * rotated axis so the handles feel natural.
  */
-function WordSlider({ width: initialWidth, word, wordClasses, height = 70, handleSize = 28, onChange }: WordSliderProps) {
+function WordSlider({ width: initialWidth, word, wordClasses, handleSize = 28, onChange }: WordSliderProps) {
   const width = initialWidth > 0 ? initialWidth + 35 : 0;
 
   const [left, setLeft] = useState(0);
@@ -197,8 +199,8 @@ function WordSlider({ width: initialWidth, word, wordClasses, height = 70, handl
 
   return (
     <div
-      className="relative select-none transition-transform duration-300 ease-out"
-      style={{ width, height, transform: `rotate(${dynamicRotation}deg)` }}
+      className="relative h-11 select-none transition-transform duration-300 ease-out sm:h-16 md:h-[68px]"
+      style={{ width, transform: `rotate(${dynamicRotation}deg)` }}
     >
       <div className="pointer-events-none absolute inset-0 rounded-2xl border-2 border-neutral-dark" />
       {(["left", "right"] as const).map((handle) => {
