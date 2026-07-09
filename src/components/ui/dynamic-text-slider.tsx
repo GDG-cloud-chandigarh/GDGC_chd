@@ -72,17 +72,16 @@ export function DynamicTextSlider({
   return (
     <div className={cn("flex flex-col items-center justify-center text-center", className)}>
       <div className="max-w-5xl">
-        <h1 className={wordClasses}>{topLine}</h1>
+        {/* Headline on a single line: static word + the framed slider word */}
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+          <h1 className={wordClasses}>{topLine}</h1>
+          <WordSlider width={textWidth} word={sliderWord} wordClasses={wordClasses} />
+        </div>
 
         {/* Hidden copy for width-measurement. Font metrics must match the visible slider text. */}
         <span ref={measureRef} className={cn("absolute -left-[9999px] px-4 whitespace-nowrap", wordClasses)}>
           {sliderWord}
         </span>
-
-        {/* Range-slider container */}
-        <div className="mt-4 flex justify-center gap-4 md:mt-6">
-          <WordSlider width={textWidth} word={sliderWord} wordClasses={wordClasses} />
-        </div>
 
         {subheading && (
           <p className="mx-auto mt-8 max-w-2xl text-lg text-neutral-dark/70 md:text-xl">{subheading}</p>
@@ -226,7 +225,7 @@ function WordSlider({ width: initialWidth, word, wordClasses, height = 70, handl
         );
       })}
       <div
-        className={cn("z-10 flex h-full w-full items-center justify-center overflow-hidden px-4", wordClasses)}
+        className={cn("z-10 flex h-full w-full items-center justify-center overflow-hidden whitespace-nowrap px-4", wordClasses)}
         style={{ clipPath: `inset(0 ${width - right}px 0 ${left}px round 1rem)` }}
       >
         {word}

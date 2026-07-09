@@ -55,13 +55,12 @@ export default function HomePage() {
         <HeroGravity />
         <div className="relative z-10 mx-auto max-w-5xl px-4">
           <DynamicTextSlider
-            topLine="GDG Cloud"
-            sliderWord="Chandigarh"
+            topLine="GDG"
+            sliderWord="Cloud Chandigarh"
             subheading="The place for cloud developers and architects in Chandigarh."
           >
             <GlowButton href={JOIN_URL}>Join the Community</GlowButton>
           </DynamicTextSlider>
-          <p className="mt-6 text-xs text-neutral-dark/60">Drag the handles above — and the tags behind.</p>
         </div>
       </section>
 
