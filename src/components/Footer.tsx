@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Linkedin, Twitter, Instagram, Youtube, MessageCircle } from "lucide-react";
 import { Lockup } from "./Lockup";
+import { GlowButton } from "./GlowButton";
 import { FOOTER_DISCLAIMER, SOCIAL_LINKS, NEWSLETTER_FORM_URL } from "@/lib/constants";
 
 const FOOTER_LINKS = [
@@ -37,12 +38,11 @@ export function Footer() {
 
           <div>
             <p className="text-sm font-semibold">Stay in the loop</p>
-            <Link
-              href={NEWSLETTER_FORM_URL}
-              className="mt-2 inline-block rounded-full bg-google-blue px-4 py-2 text-sm font-semibold text-white hover:bg-blue-600"
-            >
-              Subscribe to our newsletter
-            </Link>
+            <div className="mt-2">
+              <GlowButton href={NEWSLETTER_FORM_URL} size="sm">
+                Subscribe to our newsletter
+              </GlowButton>
+            </div>
             <div className="mt-4 flex gap-4">
               <a href={SOCIAL_LINKS.linkedin} aria-label="LinkedIn" className="text-neutral-dark hover:text-google-blue">
                 <Linkedin className="h-5 w-5" />

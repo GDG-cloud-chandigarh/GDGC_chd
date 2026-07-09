@@ -1,5 +1,6 @@
-import Link from "next/link";
 import dynamic from "next/dynamic";
+import { GlowButton } from "@/components/GlowButton";
+import { DynamicTextSlider } from "@/components/ui/dynamic-text-slider";
 import { Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 import { StatCounter } from "@/components/StatCounter";
@@ -52,18 +53,15 @@ export default function HomePage() {
     <>
       <section className="relative flex min-h-[calc(100vh-4rem)] w-full items-center justify-center overflow-hidden text-center">
         <HeroGravity />
-        <div className="relative z-10 mx-auto max-w-2xl px-4">
-          <h1 className="font-heading text-4xl font-bold sm:text-5xl md:text-6xl">GDG Cloud Chandigarh</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-neutral-dark/80">
-            The place for cloud developers and architects in Chandigarh.
-          </p>
-          <Link
-            href={JOIN_URL}
-            className="mt-6 inline-block rounded-full bg-google-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-600"
+        <div className="relative z-10 mx-auto max-w-5xl px-4">
+          <DynamicTextSlider
+            topLine="GDG Cloud"
+            sliderWord="Chandigarh"
+            subheading="The place for cloud developers and architects in Chandigarh."
           >
-            Join the Community
-          </Link>
-          <p className="mt-2 text-xs text-neutral-dark/60">Drag the tags below — built with the Google Cloud stack.</p>
+            <GlowButton href={JOIN_URL}>Join the Community</GlowButton>
+          </DynamicTextSlider>
+          <p className="mt-6 text-xs text-neutral-dark/60">Drag the handles above — and the tags behind.</p>
         </div>
       </section>
 

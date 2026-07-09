@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, MapPin } from "lucide-react";
+import { GlowButton } from "@/components/GlowButton";
 import type { EventDetails } from "@/lib/types";
 
 function formatEventDate(iso: string) {
@@ -35,14 +36,7 @@ export function EventCard({ event }: { event: EventDetails }) {
           <Link href={`/events/${event.slug}`} className="text-sm font-semibold text-google-blue hover:underline">
             Details
           </Link>
-          {!event.isPast && (
-            <a
-              href={event.rsvpUrl}
-              className="rounded-full bg-google-blue px-4 py-1.5 text-sm font-semibold text-white hover:bg-blue-600"
-            >
-              RSVP
-            </a>
-          )}
+          {!event.isPast && <GlowButton href={event.rsvpUrl} size="sm">RSVP</GlowButton>}
         </div>
       </div>
     </div>

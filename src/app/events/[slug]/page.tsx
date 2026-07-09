@@ -3,6 +3,7 @@ import Script from "next/script";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Calendar, MapPin, Youtube } from "lucide-react";
+import { GlowButton } from "@/components/GlowButton";
 import { getEventBySlug, getEvents } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
 import { eventJsonLd } from "@/lib/jsonld";
@@ -52,12 +53,9 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
       <p className="mt-6 text-neutral-dark/90">{event.description}</p>
 
       {!event.isPast && (
-        <a
-          href={event.rsvpUrl}
-          className="mt-6 inline-block rounded-full bg-google-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-600"
-        >
-          RSVP
-        </a>
+        <div className="mt-6">
+          <GlowButton href={event.rsvpUrl}>RSVP</GlowButton>
+        </div>
       )}
 
       {event.agenda && event.agenda.length > 0 && (

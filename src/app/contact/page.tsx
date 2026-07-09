@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Linkedin, Twitter, Instagram, Youtube, Mail } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import { GlowButton } from "@/components/GlowButton";
 import { CONTACT_FORM_URL, CONTACT_EMAIL, MAP_EMBED_URL, SOCIAL_LINKS } from "@/lib/constants";
 
 export const metadata: Metadata = buildMetadata({
@@ -18,12 +19,7 @@ export default function ContactPage() {
       </p>
 
       <div className="mt-8 flex flex-wrap gap-4">
-        <a
-          href={CONTACT_FORM_URL}
-          className="rounded-full bg-google-blue px-6 py-3 text-sm font-semibold text-white hover:bg-blue-600"
-        >
-          Fill out our contact form
-        </a>
+        <GlowButton href={CONTACT_FORM_URL}>Fill out our contact form</GlowButton>
         <a
           href={`mailto:${CONTACT_EMAIL}`}
           className="flex items-center gap-2 rounded-full border border-neutral-light px-6 py-3 text-sm font-semibold text-neutral-dark hover:border-google-blue hover:text-google-blue"
