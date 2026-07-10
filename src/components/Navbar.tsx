@@ -19,8 +19,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 h-16">
-      <div className="relative mx-auto flex h-full max-w-6xl items-center justify-center px-4">
+    <header className="sticky top-0 z-50 pt-4 sm:pt-6">
+      <div className="relative mx-auto flex h-14 max-w-6xl items-center justify-center px-4">
         <Link
           href="/"
           className="absolute inset-y-0 left-4 flex items-center gap-2"

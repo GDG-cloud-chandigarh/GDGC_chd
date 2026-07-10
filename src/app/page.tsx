@@ -10,7 +10,7 @@ const HeroGravity = dynamic(() => import("@/components/HeroGravity").then((mod) 
 
 export default function HomePage() {
   return (
-    <section className="relative flex min-h-[calc(100vh-4rem)] w-full items-center justify-center overflow-hidden text-center">
+    <section className="relative flex min-h-[calc(100dvh-4.5rem)] w-full items-center justify-center overflow-hidden text-center sm:min-h-[calc(100dvh-5rem)]">
       <HeroGravity />
       <div className="relative z-10 mx-auto max-w-5xl px-6">
         <DynamicTextSlider
