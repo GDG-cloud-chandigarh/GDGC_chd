@@ -6,8 +6,8 @@ export const JOIN_URL = "https://gdg.community.dev/gdg-cloud-chandigarh/";
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/company/gdg-cloud-chandigarh",
-  twitter: "https://twitter.com/gdgcloudchd",
-  instagram: "https://instagram.com/gdgcloudchd",
+  twitter: "https://x.com/GDGC_Chandigarh",
+  instagram: "https://www.instagram.com/gdgc_chandigarh",
   youtube: "https://youtube.com/@gdgcloudchd",
   whatsapp: "https://chat.whatsapp.com/PLACEHOLDER",
 };
@@ -20,5 +20,5 @@ export const VOLUNTEER_FORM_URL = "https://forms.gle/PLACEHOLDER-volunteer";
 export const SPONSOR_FORM_URL = "https://forms.gle/PLACEHOLDER-sponsor";
 export const NEWSLETTER_FORM_URL = "https://forms.gle/PLACEHOLDER-newsletter";
 export const CONTACT_FORM_URL = "https://forms.gle/PLACEHOLDER-contact";
-export const CONTACT_EMAIL = "hello@gdgcloudchandigarh.example.com";
+export const CONTACT_EMAIL = "gdgcloudchandigarh@gmail.com";
 export const MAP_EMBED_URL = "https://www.google.com/maps/embed?pb=PLACEHOLDER-chandigarh";

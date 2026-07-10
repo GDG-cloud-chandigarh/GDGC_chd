@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_NAME, template: `%s | ${SITE_NAME}` },
   description: SITE_TAGLINE,
+  icons: { icon: "/images/gdg_logo.png", apple: "/images/gdg_logo.png" },
   openGraph: { siteName: SITE_NAME, type: "website", images: [{ url: "/images/og-default.svg" }] },
   twitter: { card: "summary_large_image" },
 };
