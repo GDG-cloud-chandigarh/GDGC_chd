@@ -3,6 +3,7 @@ import Script from "next/script";
 import { headingFont, bodyFont, monoFont } from "@/lib/fonts";
 import { Navbar } from "@/components/Navbar";
 import { ConditionalFooter } from "@/components/ConditionalFooter";
+import { SocialDock } from "@/components/SocialDock";
 import { SiteBackground } from "@/components/SiteBackground";
 import { organizationJsonLd } from "@/lib/jsonld";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/constants";
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main className="flex-1">{children}</main>
         <ConditionalFooter />
+        <SocialDock />
       </body>
     </html>
   );
