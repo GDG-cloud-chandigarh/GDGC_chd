@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Linkedin, Twitter, Instagram, Youtube, MessageCircle } from "lucide-react";
 import { Lockup } from "./Lockup";
 import { GlowButton } from "./GlowButton";
-import { FOOTER_DISCLAIMER, SOCIAL_LINKS, NEWSLETTER_FORM_URL } from "@/lib/constants";
+import { FOOTER_DISCLAIMER, NEWSLETTER_FORM_URL } from "@/lib/constants";
 
 const FOOTER_LINKS = [
   { href: "/about", label: "About" },
@@ -42,23 +41,6 @@ export function Footer() {
               <GlowButton href={NEWSLETTER_FORM_URL} size="sm">
                 Subscribe to our newsletter
               </GlowButton>
-            </div>
-            <div className="mt-4 flex gap-4">
-              <a href={SOCIAL_LINKS.linkedin} aria-label="LinkedIn" className="text-neutral-dark hover:text-google-blue">
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a href={SOCIAL_LINKS.twitter} aria-label="X (Twitter)" className="text-neutral-dark hover:text-google-blue">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href={SOCIAL_LINKS.instagram} aria-label="Instagram" className="text-neutral-dark hover:text-google-blue">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href={SOCIAL_LINKS.youtube} aria-label="YouTube" className="text-neutral-dark hover:text-google-blue">
-                <Youtube className="h-5 w-5" />
-              </a>
-              <a href={SOCIAL_LINKS.whatsapp} aria-label="WhatsApp community" className="text-neutral-dark hover:text-google-blue">
-                <MessageCircle className="h-5 w-5" />
-              </a>
             </div>
           </div>
         </div>

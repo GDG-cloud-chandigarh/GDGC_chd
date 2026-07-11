@@ -1,10 +1,14 @@
 import type { TeamMember } from "@/lib/types";
 
-// PLACEHOLDER sample data — replace with real chapter organizers.
 export const sampleTeam: TeamMember[] = [
-  { name: "Simran Kaur", role: "Chapter Lead", photo: "/images/avatar-placeholder.svg", linkedin: "https://linkedin.com/in/PLACEHOLDER" },
-  { name: "Ishaan Bedi", role: "Co-Organizer", photo: "/images/avatar-placeholder.svg", linkedin: "https://linkedin.com/in/PLACEHOLDER" },
-  { name: "Meher Gill", role: "Community Manager", photo: "/images/avatar-placeholder.svg", twitter: "https://twitter.com/PLACEHOLDER" },
-  { name: "Arjun Thakur", role: "Events Lead", photo: "/images/avatar-placeholder.svg" },
-  { name: "Naina Sood", role: "Design & Content", photo: "/images/avatar-placeholder.svg" },
+  { name: "Cherish Santoshi", role: "Organizer", photo: "/pfp/cherish.jpeg", linkedin: "https://www.linkedin.com/in/cherishsantoshi/" },
+  { name: "Tushar Shah", role: "Co-Organizer", photo: "/pfp/tushar.jpeg", linkedin: "https://www.linkedin.com/in/tushar21shah/" },
+];
+
+export const sampleVolunteers: TeamMember[] = [
+  { name: "Purahan Gupta", role: "", photo: "/pfp/purahan.JPG", linkedin: "https://www.linkedin.com/in/purahan/" },
+  { name: "Manik", role: "", photo: "/pfp/manik.jpeg", linkedin: "https://www.linkedin.com/in/mrmanik/" },
+  { name: "Shatakshi", role: "", photo: "/pfp/shatakshi.jpeg", linkedin: "https://www.linkedin.com/in/shatakshi-bhardwaj-445295281/" },
+  { name: "Krishanu Mishra", role: "", photo: "/pfp/krishanu.jpg", linkedin: "https://www.linkedin.com/in/krishanu-mishra-aa531b276/" },
+  { name: "Sarang Ahlawat", role: "", photo: "/pfp/sarang.jpeg", linkedin: "https://www.linkedin.com/in/sarangahlawat/" },
 ];

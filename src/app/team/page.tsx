@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { TeamCard } from "@/components/TeamCard";
 import { CTASection } from "@/components/CTASection";
 import { buildMetadata } from "@/lib/seo";
-import { getTeam } from "@/lib/content";
+import { getTeam, getVolunteers } from "@/lib/content";
 import { VOLUNTEER_FORM_URL } from "@/lib/constants";
 
 export const metadata: Metadata = buildMetadata({
@@ -13,6 +13,7 @@ export const metadata: Metadata = buildMetadata({
 
 export default function TeamPage() {
   const team = getTeam();
+  const volunteers = getVolunteers();
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
@@ -24,6 +25,13 @@ export default function TeamPage() {
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {team.map((member) => (
+          <TeamCard key={member.name} member={member} />
+        ))}
+      </div>
+
+      <h2 className="mt-16 font-heading text-2xl font-bold">Core Team</h2>
+      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {volunteers.map((member) => (
           <TeamCard key={member.name} member={member} />
         ))}
       </div>

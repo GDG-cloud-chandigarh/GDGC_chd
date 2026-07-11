@@ -4,7 +4,7 @@ import matter from "gray-matter";
 import { sampleEvents } from "../../content/data/events";
 import { sampleSpeakers } from "../../content/data/speakers";
 import { sampleSponsors } from "../../content/data/sponsors";
-import { sampleTeam } from "../../content/data/team";
+import { sampleTeam, sampleVolunteers } from "../../content/data/team";
 import type { BlogPost, BlogPostMeta, EventDetails, Speaker, Sponsor, SponsorTier, TeamMember } from "./types";
 
 export function getEvents(): EventDetails[] {
@@ -53,6 +53,10 @@ export function getSponsorsByTier(): Record<SponsorTier, Sponsor[]> {
 
 export function getTeam(): TeamMember[] {
   return sampleTeam;
+}
+
+export function getVolunteers(): TeamMember[] {
+  return sampleVolunteers;
 }
 
 const BLOG_DIR = path.join(process.cwd(), "content/blog");
