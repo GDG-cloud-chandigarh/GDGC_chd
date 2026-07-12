@@ -23,3 +23,20 @@ h6 {
 :focus-visible {
   @apply outline outline-2 outline-offset-2 outline-google-blue;
 }
+
+/* Birds flying across the About hero */
+@keyframes bird-fly {
+  from {
+    transform: translateX(-15vw) translateY(0);
+  }
+  to {
+    transform: translateX(115vw) translateY(-6vh);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bird {
+    animation: none;
+    opacity: 0;
+  }
+}

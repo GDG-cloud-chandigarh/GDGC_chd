@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { HeroBirds } from "@/components/HeroBirds";
 import { CTASection } from "@/components/CTASection";
 import { buildMetadata } from "@/lib/seo";
 import { VOLUNTEER_FORM_URL } from "@/lib/constants";
@@ -33,6 +34,7 @@ export default function AboutPage() {
           sizes="100vw"
           className="object-cover"
         />
+        <HeroBirds />
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto flex w-full max-w-6xl justify-end px-4 sm:px-8">
             <div className="max-w-xl text-right">
