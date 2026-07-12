@@ -49,15 +49,3 @@ export interface TeamMember {
   linkedin?: string;
   twitter?: string;
 }
-
-export interface BlogPostMeta {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  ogImage?: string;
-}
-
-export interface BlogPost extends BlogPostMeta {
-  content: string;
-}
