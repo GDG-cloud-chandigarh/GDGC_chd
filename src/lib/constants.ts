@@ -16,7 +16,7 @@ export const FOOTER_DISCLAIMER =
   "GDG Cloud Chandigarh is an independent group; our activities and the opinions expressed here should in no way be linked to Google, the corporation. To learn more about the GDG program, visit https://developers.google.com/community/gdg/";
 
 export const SPEAKER_FORM_URL = "https://forms.gle/PLACEHOLDER-speaker-cfp";
-export const VOLUNTEER_FORM_URL = "https://forms.gle/PLACEHOLDER-volunteer";
+export const VOLUNTEER_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScXR8XuLkOYl25ROasJiDT-IopQkSHyeaXD5bN-CQjkOvtMnQ/viewform?usp=sharing&ouid=104557177131136085490";
 export const SPONSOR_FORM_URL = "https://forms.gle/PLACEHOLDER-sponsor";
 export const NEWSLETTER_FORM_URL = "https://forms.gle/PLACEHOLDER-newsletter";
 export const CONTACT_FORM_URL = "https://forms.gle/PLACEHOLDER-contact";
