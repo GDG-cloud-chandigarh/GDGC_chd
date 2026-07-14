@@ -24,6 +24,8 @@ export default function EventsPage() {
         overlayBlurColor="#ffffff"
         grayscale={false}
         segments={24}
+        openedImageWidth="640px"
+        openedImageHeight="480px"
       />
     </div>
   );
