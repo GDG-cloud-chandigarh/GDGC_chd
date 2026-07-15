@@ -4,7 +4,7 @@ import { useEffect, useMemo, useRef, useCallback, type CSSProperties } from "rea
 import { useGesture } from "@use-gesture/react";
 import "./dome-gallery.css";
 
-type ImageInput = string | { src: string; alt?: string };
+type ImageInput = string | { src: string; alt?: string; description?: string; link?: string };
 
 interface DomeGalleryProps {
   images?: ImageInput[];
@@ -33,6 +33,8 @@ interface ItemDef {
   sizeY: number;
   src: string;
   alt: string;
+  description: string;
+  link: string;
 }
 
 const DEFAULT_IMAGES: ImageInput[] = [
@@ -94,7 +96,7 @@ function buildItems(pool: ImageInput[], seg: number): ItemDef[] {
 
   const totalSlots = coords.length;
   if (pool.length === 0) {
-    return coords.map((c) => ({ ...c, src: "", alt: "" }));
+    return coords.map((c) => ({ ...c, src: "", alt: "", description: "", link: "" }));
   }
   if (pool.length > totalSlots) {
     console.warn(
@@ -104,9 +106,14 @@ function buildItems(pool: ImageInput[], seg: number): ItemDef[] {
 
   const normalizedImages = pool.map((image) => {
     if (typeof image === "string") {
-      return { src: image, alt: "" };
+      return { src: image, alt: "", description: "", link: "" };
     }
-    return { src: image.src || "", alt: image.alt || "" };
+    return {
+      src: image.src || "",
+      alt: image.alt || "",
+      description: image.description || "",
+      link: image.link || "",
+    };
   });
 
   const usedImages = Array.from({ length: totalSlots }, (_, i) => normalizedImages[i % normalizedImages.length]);
@@ -128,6 +135,8 @@ function buildItems(pool: ImageInput[], seg: number): ItemDef[] {
     ...c,
     src: usedImages[i].src,
     alt: usedImages[i].alt,
+    description: usedImages[i].description,
+    link: usedImages[i].link,
   }));
 }
 
@@ -547,6 +556,39 @@ export default function DomeGallery({
       const img = document.createElement("img");
       img.src = rawSrc;
       overlay.appendChild(img);
+      const link = parent.dataset.link || "";
+      if (link) {
+        overlay.style.pointerEvents = "auto";
+        overlay.style.cursor = "pointer";
+        overlay.addEventListener("click", () => {
+          window.open(link, "_blank", "noopener,noreferrer");
+        });
+      }
+      const title = parent.dataset.alt || "";
+      const description = parent.dataset.description || "";
+      if (title || description) {
+        const caption = document.createElement("div");
+        caption.className = "enlarge__caption";
+        if (title) {
+          const h = document.createElement("p");
+          h.className = "enlarge__title";
+          h.textContent = title;
+          caption.appendChild(h);
+        }
+        if (description) {
+          const p = document.createElement("p");
+          p.className = "enlarge__desc";
+          p.textContent = description;
+          caption.appendChild(p);
+        }
+        if (link) {
+          const hint = document.createElement("p");
+          hint.className = "enlarge__link";
+          hint.textContent = "Click to view event →";
+          caption.appendChild(hint);
+        }
+        overlay.appendChild(caption);
+      }
       viewerRef.current!.appendChild(overlay);
       const tx0 = tileR.left - frameR.left;
       const ty0 = tileR.top - frameR.top;
@@ -653,6 +695,9 @@ export default function DomeGallery({
                 key={`${it.x},${it.y},${i}`}
                 className="item"
                 data-src={it.src}
+                data-alt={it.alt}
+                data-description={it.description}
+                data-link={it.link}
                 data-offset-x={it.x}
                 data-offset-y={it.y}
                 data-size-x={it.sizeX}

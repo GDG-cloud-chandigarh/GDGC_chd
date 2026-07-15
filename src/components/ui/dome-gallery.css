@@ -188,6 +188,39 @@ main.sphere-main {
   filter: var(--image-filter, none);
 }
 
+.enlarge__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px 20px 18px;
+  color: #fff;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+
+.enlarge__title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.enlarge__desc {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.enlarge__link {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+}
+
 .sphere-root .enlarge-closing img {
   filter: var(--image-filter, none);
 }
