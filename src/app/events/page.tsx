@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
+import { UpcomingEvents } from "@/components/UpcomingEvents";
 import DomeGallery from "@/components/ui/dome-gallery";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   title: "Events",
-  description: "Upcoming and past GDG Cloud Chandigarh meetups, study jams, and DevFest.",
+  description: "Cloud Community Days, the Code for Communities hackathon and DevFest Chandigarh on 23 and 24 October 2026, plus past GDG Cloud Chandigarh events.",
   path: "/events",
 });
 
 export default function EventsPage() {
   return (
-    <div className="-mt-[4.5rem] h-[100svh] w-full overflow-hidden sm:-mt-20">
+    <>
+    <UpcomingEvents />
+
+    <section aria-labelledby="past-events">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-8">
+        <h2 id="past-events" className="font-heading text-2xl font-bold text-neutral-dark sm:text-3xl">
+          Past events
+        </h2>
+        <p className="mt-2 text-neutral-dark/70">Drag to explore, and click a photo for the event.</p>
+      </div>
+    <div className="h-[100svh] w-full overflow-hidden">
       <DomeGallery
         images={[
           {
@@ -73,5 +84,7 @@ export default function EventsPage() {
         openedImageHeight="480px"
       />
     </div>
+    </section>
+    </>
   );
 }
